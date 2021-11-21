@@ -11,6 +11,7 @@ def init_bot(): # инициализация бота
     '''
 
     telegram_token = os.environ.get('TOKEN')
+    global bot
     bot = telebot.TeleBot(telegram_token)
 
 if __name__ == "__main__":
