@@ -9,7 +9,7 @@ def init_bot(): # инициализация бота
         global bot
         bot = telebot.TeleBot(telegram_token)
     '''
-    telegram_token = os.getenv("TOKEN")
+    telegram_token = os.environ["TOKEN"]
     bot = telebot.TeleBot(telegram_token)
 
 if __name__ == "__main__":
