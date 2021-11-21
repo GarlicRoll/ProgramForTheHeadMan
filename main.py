@@ -1,19 +1,19 @@
 import telebot
 import os
-import websiteconfig
 
 def init_bot(): # инициализация бота
     print("Bot_init")
-    '''
-    with open("program_for_the_headman\\bot_token.txt", "r") as file:
+
+    with open("bot_token.txt", "r") as file:
         telegram_token = file.readline()
         global bot
         bot = telebot.TeleBot(telegram_token)
-    '''
 
+    '''
     telegram_token = os.environ.get('TOKEN')
     global bot
     bot = telebot.TeleBot(telegram_token)
+    '''
 
 if __name__ == "__main__":
     bot = None
