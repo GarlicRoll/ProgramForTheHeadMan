@@ -3,18 +3,17 @@ import os
 
 def init_bot(): # инициализация бота
     print("Bot_init")
-
+    '''
     with open("bot_token.txt", "r") as file:
         telegram_token = file.readline()
         global bot
         bot = telebot.TeleBot(telegram_token)
-
     '''
+    
     telegram_token = os.environ.get('TOKEN')
     global bot
     bot = telebot.TeleBot(telegram_token)
-    '''
-
+    
 if __name__ == "__main__":
     bot = None
     init_bot()
@@ -31,17 +30,19 @@ def statistic_command(message): # запрос местоположения
 
 @bot.message_handler(content_types=['location'])
 def handle_loc(message):
-    message_buffer_id = 100
-    file_buffer_id = 110
     longitude = message.location.longitude
     latitude = message.location.latitude
     # создание файла
+    '''
+    message_buffer_id = 100
+    file_buffer_id = 110
     with open("data.txt", "r+") as file:
         #file.write(str(longitude) + " " + str(latitude))
         file.write('test text')
         bot.edit_message_media(chat_id=message.chat.id, message_id=message_buffer_id, media=file_buffer_id)
         #print(bot.send_document(message.chat.id, file).id)
     #print(message.id)
+    '''
     # проверка местоположения
     if round(longitude, 3) == 30.297 and round(latitude, 3) == 59.972: #59.97168732680863, 30.296766628835186
         text = "Молодец, " + str(message.from_user.first_name) + ", ходи на пары в 6 корпус дальше!"
