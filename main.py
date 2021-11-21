@@ -1,5 +1,6 @@
 import telebot
 import os
+import websiteconfig
 
 def init_bot(): # инициализация бота
     print("Bot_init")
@@ -10,7 +11,7 @@ def init_bot(): # инициализация бота
         bot = telebot.TeleBot(telegram_token)
     '''
 
-    telegram_token = os.environ.get('TOKEN', 'TOKEN')
+    telegram_token = os.environ.get('TOKEN')
     global bot
     bot = telebot.TeleBot(telegram_token)
 
