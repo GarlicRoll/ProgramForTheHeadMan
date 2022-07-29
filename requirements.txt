@@ -6,7 +6,4 @@ chardet==4.0.0
 et-xmlfile==1.1.0
 idna==2.10
 openpyxl==3.0.10
-pip==21.3.1	22.2.1
-setuptools==60.2.0
 urllib3==1.26.5
-wheel==0.37.1
